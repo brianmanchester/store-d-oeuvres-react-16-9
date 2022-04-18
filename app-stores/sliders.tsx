@@ -1,11 +1,11 @@
-import { ReactNode, useState, useEffect, useCallback, useRef } from 'react';
+import { ReactNode, useState, useEffect, useCallback, useRef, memo } from 'react';
 import { createStore } from '../stores';
 import { Params, StoreState } from './types';
 
 const useSliders = (params?: Params) => {
   const [slidersStore, setSlidersStore] = useState<StoreState>({
     consumers: [],
-    items: params?.startCount || 0
+    items: params?.startCount?.[0] || 0
   });
   
   // Memoized
@@ -39,7 +39,7 @@ const useSliders = (params?: Params) => {
   // };
 
   useEffect(() => {
-    setSlidersStore(prevState => ({ ...prevState, items: params?.startCount || 0 }));
+    setSlidersStore(prevState => ({ ...prevState, items: params?.startCount?.[0] || 0 }));
   }, [params?.startCount]);
 
   return {
@@ -89,4 +89,4 @@ const SlidersProvider = ({
   );
 };
 
-export default SlidersProvider;
+export default memo(SlidersProvider);

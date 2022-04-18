@@ -1,11 +1,12 @@
-import { ReactNode, useState, useEffect, useCallback, useRef } from 'react';
+import { ReactNode, useState, useEffect, useCallback, useRef, memo } from 'react';
+// import Memoize from '../components/memoize';
 import { createStore } from '../stores';
 import { Params, StoreState } from './types';
 
 const useShrimp = (params?: Params) => {
   const [shrimpStore, setShrimpStore] = useState<StoreState>({
     consumers: [],
-    items: params?.startCount || 0,
+    items: params?.startCount?.[0] || 0,
   });
 
   // Memoized
@@ -39,7 +40,8 @@ const useShrimp = (params?: Params) => {
   // };
 
   useEffect(() => {
-    setShrimpStore(prevState => ({ ...prevState, items: params?.startCount || 0 }));
+    console.log('I AM RUNNING ========================')
+    setShrimpStore(prevState => ({ ...prevState, items: params?.startCount?.[0] || 0 }));
   }, [params?.startCount]);
 
   return {
@@ -91,4 +93,4 @@ const ShrimpProvider = ({
   );
 };
 
-export default ShrimpProvider;
+export default memo(ShrimpProvider);

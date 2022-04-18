@@ -6,7 +6,7 @@ import Consuming from '../consuming';
 
 const GreatGrandParent = () => {
   const { consumers, registerConsumer, shrimp } = useShrimpStore();
-  const name = "GGP-BR"
+  const name = "GGP-BR";
 
   useEffect(() => {
     console.log(`%c${name} registering consumer`, 'color:yellow')

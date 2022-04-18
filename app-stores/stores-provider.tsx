@@ -4,8 +4,8 @@ import SlidersProvider from "./sliders";
 // import Memoize from '../components/memoize';
 
 export type StartCounts = {
-  shrimpStartCount?: number;
-  slidersStartCount?: number;
+  shrimpStartCount?: number[];
+  slidersStartCount?: number[];
 }
 
 const StoresProvider = ({
@@ -49,3 +49,4 @@ const StoresProvider = ({
 }
 
 export default memo(StoresProvider);
+// export default StoresProvider;

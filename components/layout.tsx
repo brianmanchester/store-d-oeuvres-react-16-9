@@ -5,8 +5,8 @@ import StoresProvider from '../app-stores/stores-provider';
 const Layout = ({ children }: { children: ReactNode }) => {
   const [count, setCount] = useState(0);
   const [{ shrimpStartCount, slidersStartCount }, setStartCounts] = useState({
-    shrimpStartCount: 3,
-    slidersStartCount: 4
+    shrimpStartCount: [3],
+    slidersStartCount: [4]
   });
 
   const spanRef = useRef<HTMLSpanElement>(null!);
@@ -42,19 +42,19 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <div className="flex flex-col justify-center items-start gap-4">
             <button
               className="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-3 w-60 rounded-md shadow-md"
-              onClick={() => setStartCounts(prevState => ({ ...prevState, shrimpStartCount: 0 }))}
+              onClick={() => setStartCounts(prevState => ({ ...prevState, shrimpStartCount: [0] }))}
             >
               Eat all the shrimp
             </button>
             <button
               className="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-3 w-60 rounded-md shadow-md"
-              onClick={() => setStartCounts(prevState => ({ ...prevState, slidersStartCount: 0 }))}
+              onClick={() => setStartCounts(prevState => ({ ...prevState, slidersStartCount: [0] }))}
             >
               Eat all the sliders
             </button>
             <button
               className="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-3 w-60 rounded-md shadow-md"
-              onClick={() => setStartCounts({ shrimpStartCount: 0, slidersStartCount: 0 })}
+              onClick={() => setStartCounts({ shrimpStartCount: [0], slidersStartCount: [0] })}
             >
               Eat all the Stores d&apos;Oeuvres
             </button>
