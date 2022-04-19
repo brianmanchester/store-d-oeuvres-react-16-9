@@ -40,7 +40,6 @@ const useShrimp = (params?: Params) => {
   // };
 
   useEffect(() => {
-    console.log('I AM RUNNING ========================')
     setShrimpStore(prevState => ({ ...prevState, items: params?.startCount?.[0] || 0 }));
   }, [params?.startCount]);
 
@@ -81,8 +80,13 @@ const ShrimpProvider = ({
       <div style={{ position: 'fixed', top: 16, left: '50%', marginLeft: '-24px' }}>
         <div className="absolute">
           <span className="flex h-12 w-12">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-blueGray-400 opacity-75" ref={spanRef} />
-            <span className="relative inline-flex rounded-full h-12 w-12 bg-blueGray-500">
+            <span
+              className="absolute inline-flex h-full w-full rounded-full bg-blueGray-400 opacity-75"
+              ref={spanRef}
+            />
+            <span
+              className="relative inline-flex rounded-full h-12 w-12 bg-blueGray-500"
+            >
               <span className="absolute top-2 left-3 text-2xl">&#127844;</span>
             </span>
           </span>
