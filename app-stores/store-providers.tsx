@@ -1,7 +1,6 @@
 import { ReactNode, useEffect, memo, useRef } from "react";
 import ShrimpProvider from "./shrimp";
 import SlidersProvider from "./sliders";
-// import Memoize from '../components/memoize';
 
 export type StartCounts = {
   shrimpStartCount?: number[];
@@ -48,5 +47,8 @@ const StoreProviders = ({
   );
 }
 
+// Memoized
 export default memo(StoreProviders);
+
+// Non-memoized
 // export default StoreProviders;

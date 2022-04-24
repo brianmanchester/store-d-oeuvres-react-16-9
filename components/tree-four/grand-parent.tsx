@@ -12,5 +12,8 @@ const GrandParent = () => (
   </div>
 );
 
+// Memoized
 export default memo(GrandParent);
+
+// Non-memoized
 // export default GrandParent;

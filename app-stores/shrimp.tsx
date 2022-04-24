@@ -1,5 +1,4 @@
 import { ReactNode, useState, useEffect, useCallback, useRef, memo } from 'react';
-// import Memoize from '../components/memoize';
 import { createStore } from '../stores';
 import { Params, StoreState } from './types';
 
@@ -97,4 +96,8 @@ const ShrimpProvider = ({
   );
 };
 
+// Memoized
 export default memo(ShrimpProvider);
+
+// Non-memoized
+// export default ShrimpProvider;

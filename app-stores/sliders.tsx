@@ -89,4 +89,8 @@ const SlidersProvider = ({
   );
 };
 
+// Memoized
 export default memo(SlidersProvider);
+
+// Non-memoized
+// export default SlidersProvider;

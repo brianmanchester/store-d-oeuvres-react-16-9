@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import Memoize from '../components/memoize';
 import { EMPTY_STORE, getNoProviderMessage } from './constants';
 import { Store, StoreProviderProps } from './types';
 
@@ -15,7 +14,6 @@ export function create<Value, Params = undefined>(
 
     return (
       <Context.Provider value={value}>
-        {/* <Memoize>{children}</Memoize> */}
         {children}
       </Context.Provider>
     );
