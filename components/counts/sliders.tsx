@@ -21,11 +21,11 @@ const Sliders = () => {
   });
   
   return (
-    <div className="bg-pink-500 py-1 rounded-3xl w-64 relative">
+    <div className="bg-pink-500 py-1 rounded-3xl w-32 relative">
       <div className="absolute top-2.5 left-1" ref={renderedRef}>
         <Rendered />
       </div>
-      <h2 className="text-white text-lg text-center">Sliders on the platter: {sliders}</h2>
+      <h2 className="text-white text-lg text-center">Sliders: {sliders}</h2>
     </div>
   );
 }
