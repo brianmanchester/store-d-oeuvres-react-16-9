@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { ReactNode, useEffect, useRef, useState } from "react";
-import StoresProvider from '../app-stores/stores-provider';
+import StoreProviders from '../app-stores/store-providers';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const [count, setCount] = useState(0);
@@ -35,9 +35,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <title>&#127869; Stores d&apos;Oeuvres</title>
       </Head>
       <main className="relative">
-        <StoresProvider shrimpStartCount={shrimpStartCount} slidersStartCount={slidersStartCount}>
+        <StoreProviders shrimpStartCount={shrimpStartCount} slidersStartCount={slidersStartCount}>
           {children}
-        </StoresProvider>
+        </StoreProviders>
         <div className="absolute bottom-0 right-24">
           <div className="flex flex-col justify-center items-start gap-4">
             <button

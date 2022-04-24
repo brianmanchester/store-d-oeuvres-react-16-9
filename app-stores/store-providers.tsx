@@ -8,7 +8,7 @@ export type StartCounts = {
   slidersStartCount?: number[];
 }
 
-const StoresProvider = ({
+const StoreProviders = ({
   children,
   shrimpStartCount,
   slidersStartCount
@@ -17,7 +17,7 @@ const StoresProvider = ({
   const timerRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    console.log('%cStoresProvider rendered', 'color:tomato');
+    console.log('%cStoreProviders rendered', 'color:tomato');
     spanRef.current?.classList.add('animate-ping');
 
     if (timerRef.current) {
@@ -48,5 +48,5 @@ const StoresProvider = ({
   );
 }
 
-export default memo(StoresProvider);
-// export default StoresProvider;
+export default memo(StoreProviders);
+// export default StoreProviders;
